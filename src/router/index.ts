@@ -16,7 +16,7 @@ const routes = [
         component: Info
     },
     {
-        path: '/read',
+        path: '/read/:manga/:cap',
         name: 'read',
         component: Read,                
     }

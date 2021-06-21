@@ -1,5 +1,5 @@
 <template>
-  <div class="h-80 bg-red-400 z-20">
+  <div class="h-80 z-20">
     <img
       class="absolute filter blur-sm h-auto w-full z-0 -top-10"
       :src="manga.cover"
@@ -7,7 +7,7 @@
     />
     <img
       class="absolute -top-10 opacity-5 w-full h-11/12"
-      src="https://image.freepik.com/vetores-gratis/fundo-de-textura-de-metal-perfurado-de-prata_1048-6476.jpg"
+      src="http://bgfons.com/uploads/iron/iron_texture2387.jpg"
       alt=""
     />
   </div>
@@ -100,7 +100,7 @@ export default {
     },
     read(chapter){
       this.$store.dispatch('chapters/getMangaChapter', { sort: `?manga=${this.manga.data.id}&chapter=${chapter}&limit=1` }).then(() => {
-        this.$router.replace('/read')
+        this.$router.replace(`/read/${this.manga.data.attributes.title.en}/${chapter}`)
       })
     }
   },
